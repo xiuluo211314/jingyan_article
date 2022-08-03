@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="leanote-desktop-app" name="tool"/>
+<title>有道云笔记出现网络错误 无法同步 解决办法</title>
+<style>
+.tab{font-size:12px; margin-bottom: 10px;}
+.tab a{cursor:pointer;cursor:pointer;display:inline-block;margin-right:10px;color:#000}#tab-html{color:#ccc}
+
+.content-container .content-html{visibility: hidden;}
+.content-container.html .content-markdown{display:none}
+.content-container.html .content-html{display:block; visibility: visible;}
+.content-container.html #tab-markdown{color:#ccc}
+.content-container.html #tab-html{color:#000}
+.content-markdown {overflow: auto;}
+textarea {display: none;}
+
+*{font-family:"lucida grande","lucida sans unicode",lucida,helvetica,"Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;}
+
+body {
+  margin: 0;
+}
+
+/*公用文字样式*/
+h1{font-size:30px}h2{font-size:24px}h3{font-size:18px}h4{font-size:14px}
+.note-container{
+    margin:auto;
+    padding: 10px 20px;
+    box-shadow: 0px 0px 1px #9d9d9d;
+}
+#title {
+  margin: 0;
+}
+table {
+    margin-bottom: 16px;
+    border-collapse: collapse;
+}
+table th, table td {
+    padding: 6px 13px;
+    border: 1px solid #ddd;
+}
+table th {
+    font-weight: bold;
+}
+
+table tr {
+    background-color: none;
+    border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+    background-color: rgb(247, 247, 249);
+}
+.mce-item-table, .mce-item-table td, .mce-item-table th, .mce-item-table caption {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  padding: 6px 13px;
+}
+blockquote {
+  border-left-width:10px;
+  background-color:rgba(128,128,128,0.05);
+  border-top-right-radius:5px;
+  border-bottom-right-radius:5px;
+  padding:15px 20px;
+  border-left:5px solid rgba(128,128,128,0.075);
+}
+blockquote p {
+  margin-bottom:1.1em;
+  font-size:1em;
+  line-height:1.45
+}
+blockquote ul:last-child,blockquote ol:last-child {
+  margin-bottom:0
+}
+pre {
+  padding: 18px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  border-radius: 3px;
+  display: block;
+}
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  white-space: nowrap;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+.footnote {
+  vertical-align: top;
+  position: relative;
+  top: -0.5em;
+  font-size: .8em;
+}
+
+hr {
+  margin:2em 0
+}
+img {
+  max-width:100%;
+  display: block;
+  margin: auto;
+}
+pre {
+  word-break:break-word
+}
+p,pre,pre.prettyprint,blockquote {
+  margin:0 0 1.1em
+}
+hr {
+  margin:2em 0
+}
+img {
+  max-width:100%
+}
+.sequence-diagram,.flow-chart {
+  text-align:center;
+  margin-bottom:1.1em
+}
+.sequence-diagram text,.flow-chart text {
+  font-size:15px !important;
+  font-family:"Source Sans Pro",sans-serif !important
+}
+.sequence-diagram [fill="#ffffff"],.flow-chart [fill="#ffffff"] {
+  fill:#f6f6f6
+}
+.sequence-diagram [stroke="#000000"],.flow-chart [stroke="#000000"] {
+  stroke:#3f3f3f
+}
+.sequence-diagram text[stroke="#000000"],.flow-chart text[stroke="#000000"] {
+  stroke:none
+}
+.sequence-diagram [fill="#000"],.flow-chart [fill="#000"],.sequence-diagram [fill="#000000"],.flow-chart [fill="#000000"],.sequence-diagram [fill="black"],.flow-chart [fill="black"] {
+  fill:#3f3f3f
+}
+ul,ol {
+  margin-bottom:1.1em
+}
+ul ul,ol ul,ul ol,ol ol {
+  margin-bottom:1.1em
+}
+kbd {
+  padding:.1em .6em;
+  border:1px solid rgba(63,63,63,0.25);
+  -webkit-box-shadow:0 1px 0 rgba(63,63,63,0.25);
+  box-shadow:0 1px 0 rgba(63,63,63,0.25);
+  font-size:.7em;
+  font-family:sans-serif;
+  background-color:#fff;
+  color:#333;
+  border-radius:3px;
+  display:inline-block;
+  margin:0 .1em;
+  white-space:nowrap
+}
+.toc ul {
+  list-style-type:none;
+  margin-bottom:15px
+}
+.m-todo-item {
+  list-style: none;
+}
+pre code {
+  padding: 0;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: inherit;
+  border-radius: 0;
+}
+</style>
+</head>
+<body>
+<div class="note-container">
+<div class="content-container html" id="content-container">
+<!-- 切换 -->
+<!-- <div class="tab"><a id="tab-markdown">Markdown</a><a id="tab-html">HTML</a></div> -->
+<textarea id="leanote-content-markdown">
+<br/>
+<div>
+     <img alt="" id="zhh-title-img" src="https://raw.githubusercontent.com/xiuluo211314/jingyan_article/main/2022-07-12/有道云笔记出现网络错误-无法同步-解决办法_files/20220803143432.png" style="display:none" width="128"/>
+</div>
+<div align="center">
+  <img alt="" id="zhh-logo-path" src="https://raw.githubusercontent.com/xiuluo211314/jingyan_article/main/images/mylogo-black.png" width="128"/>
+  <div style="margin-top:1.1em;margin-bottom:1.1em;font-size:30px">今日问答</div>
+  <a href="https://www.youtube.com/channel/UCHDCnROLuwphs9sHHjwGj5g" style="margin-top:1.1em;margin-bottom:1.1em;font-size:30px">欢迎订阅我的YOUTUBE频道</a>
+  <blockquote><b><font id="zhh-article-name" size="7">有道云笔记出现网络错误 无法同步 解决办法</font></b></blockquote>
+</div>
+
+
+<hr style="height:1px;border:none;border-top:1px solid #9d9d9d;"/>
+
+
+
+## **简介**
+<br/>有道云笔记出现网络错误 无法同步 解决办法.简单几步，让你轻松解决。<br/><img alt="drawing" id="zhh-title-img1" src="https://raw.githubusercontent.com/xiuluo211314/jingyan_article/main/2022-07-12/有道云笔记出现网络错误-无法同步-解决办法_files/20220803143432.png" style="width:600;"/>
+<br/>
+
+## **经验视频**
+<br/>
+## **工具/原料**
+* 联网电脑
+
+<br/>
+## **方法/步骤**
+1. 在使用了有道云笔记后，如果点击【同步】按钮，提示【网络错误】如图所示，如何解决？
+C:/Users/ZHH/AppData/Local/YNote/data/1175615214@qq.com/d4fffdb9156e473b93aa411dc6b8c121/%5Dxg%5B%29plo%5B%60q%7B%28%257%7E3_%25%7E_bh.png
+
+
+<br/>
+2. 打开文件资源管理器，在地址栏中输入 %USERPROFILE%\LocalSettings\ApplicationData\youdao\YNote ，回车键进入到如图路径
+<img alt="drawing" id="zhh-img-step-id-1" src="https://raw.githubusercontent.com/xiuluo211314/jingyan_article/main/2022-07-12/有道云笔记出现网络错误-无法同步-解决办法_files/62e77c4770f41c657b000271.png" style="width:600;"/>
+
+<br/>
+3. 步骤2后，进入到上一层级,删除【Ynote】文件见，如图所示
+C:/Users/ZHH/AppData/Local/YNote/data/1175615214@qq.com/8b84e693f51a4e67b5f82fc9fa8a4f76/7@%60rn%7Bv7yn%291%28lc0tr0kbn2.png
+
+
+<br/>
+4. 步骤3如果弹出如图所示的【无法删除】的提醒，退出该软件后，再点击【重试】
+C:/Users/ZHH/AppData/Local/YNote/data/1175615214@qq.com/c011388b68064c27b5ec3e6a7edf2a95/yml7x7jo39_t7r%296%7Dqdp2x7.png
+
+
+<br/>
+5. 步骤4后，重新打开软件，使用账号和密码进行登陆
+<img alt="drawing" id="zhh-img-step-id-4" src="https://raw.githubusercontent.com/xiuluo211314/jingyan_article/main/2022-07-12/有道云笔记出现网络错误-无法同步-解决办法_files/62e77c4770f41c657b000270.png" style="width:600;"/>
+
+<br/>
+6. 点击【同步】后，更新的笔记如图所示。
+<img alt="drawing" id="zhh-img-step-id-5" src="https://raw.githubusercontent.com/xiuluo211314/jingyan_article/main/2022-07-12/有道云笔记出现网络错误-无法同步-解决办法_files/62e77c4770f41c657b000272.png" style="width:600;"/>
+
+<br/>
+如果您觉得有用，记得在下方点击投票、点赞、关注、留言，小编会定期奉上更多的惊喜哦，您的支持才是小编继续努力的动力，么么哒。
+<a href="https://www.youtube.com/channel/UCHDCnROLuwphs9sHHjwGj5g">欢迎订阅我的YOUTUBE频道</a><img alt="drawing" id="zhh-img-step-id-7" src="https://raw.githubusercontent.com/xiuluo211314/jingyan_article/main/images/end.jpg" style="width:600;"/>
+
+<br/><br/>
+## **注意事项**
+1. 操作失败的话，请仔细观看步骤教程<br/><br/></textarea>
+<!-- html -->
+<div class="content-html" id="leanote-content-html"></div>
+</div>
+</div>
+<script src="https://leanote.github.io/markdown-to-html/markdown-to-html.min.js"></script>
+<script>
+function init() {
+	markdownToHtml(document.getElementById('leanote-content-markdown').value, document.getElementById('leanote-content-html'), function(html) {
+		// 解析后执行
+		if(window.markdownParsed) {
+			window.markdownParsed(html);
+		}
+	});
+	var $m = document.getElementById('tab-markdown');
+	var $h = document.getElementById('tab-html');
+	var $cc = document.getElementById('content-container');
+	function toggleToHtml(isToHtml) {
+		$cc.className = isToHtml ? 'content-container html' : 'content-container';
+	}
+}
+
+// 如果不要自动解析html, notParseMarkdown在leanote-markdown.js中定义
+if(!window.notParseMarkdown) {
+	init();
+}
+</script>
+</body>
+</html>
